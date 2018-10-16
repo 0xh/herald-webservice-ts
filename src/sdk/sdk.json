@@ -1,0 +1,31 @@
+{
+  "yunpian": {
+    "apikey": "",
+    "baseURL": ""
+  },
+  "qiniu": {
+    "access": "",
+    "secret": "",
+    "bucket": ""
+  },
+  "slack": {
+    "webhookURL": ""
+  },
+  "wechat": {
+    "wx-herald": {
+      "appid": "wxf71117988eadfed0",
+      "appsecret": "3bcc91048aefbe172e2e226333396878",
+      "token": "HeraldWebService3Wechat",
+      "encodingAESKey": "o1QJaJlNbh4aMwm3gOcb2wWeonThPApDw97SZo9HdkP"
+    },
+    "mina-herald": {
+      "appid": "wx3c1c058fd07462d0",
+      "appsecret": "5655538142d1c86276d00bf233fe279a"
+    }
+  },
+  "captcha":{
+    "appId":"",
+    "secret":"",
+    "savePath":""
+  }
+}
