@@ -10,6 +10,7 @@
       "ban-single-arg-parens"
     ],
     "no-console": false,
+    "no-consecutive-blank-lines": [true, 4],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "prefer-const": [
@@ -22,10 +23,7 @@
       true,
       "single"
     ],
-    "semicolon": [
-      true,
-      "never"
-    ],
+    "semicolon": true,
     "trailing-comma": [
       true,
       {
@@ -43,7 +41,7 @@
       "ban-keywords",
       "check-format",
       "allow-leading-underscore"
-    ],
+    ]
   },
   "rulesDirectory": []
 }

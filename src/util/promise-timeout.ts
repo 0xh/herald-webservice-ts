@@ -1,8 +1,10 @@
+import { noop } from './util';
+
 /**
  * 设置全局 Promise 的超时时间
- * 将改变全局 Promise 行为
+ * 将改变全局 Promise 行为. Promise 超时将打印错误，并不再执行后续方法.
  */
-export = (timeout: number) => {
+export function setPromiseTimeout(timeout: number) {
   const _Promise = Promise
   Promise = class<T> {
     constructor(
@@ -20,6 +22,9 @@ export = (timeout: number) => {
         if (e === timeoutError) {
           console.error('[Promise Timeout]', e.stack!.split('\n').map(k => k.trim()).filter(k =>
             /:\d+:\d+\)$/.test(k) && k.indexOf('/node_modules/') === -1)[1] || 'at unknown source')
+
+          // 返回一个不改变状态的 Promise ，取消执行后续方法
+          return new _Promise(noop)
         } else {
           throw e
         }
@@ -30,5 +35,5 @@ export = (timeout: number) => {
   Promise.race = _Promise.race
   Promise.reject = _Promise.reject
   Promise.resolve = _Promise.resolve;
-  (Promise as any).prototype = Object.create(_Promise.prototype)
+  (Promise as any).prototype = _Promise.prototype
 }
