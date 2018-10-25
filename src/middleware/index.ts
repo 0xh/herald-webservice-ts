@@ -21,7 +21,9 @@ import captcha from './captcha';
 
 declare module 'koa' {
   interface Context {
+    user: any;
     logMsg: string;
+
     /** `params` 等价于 `ctx.query` (GET/DELETE方法) 或 `ctx.request.body` (POST/PUT方法) */
     params: any;
     throw: (code: number) => never;
