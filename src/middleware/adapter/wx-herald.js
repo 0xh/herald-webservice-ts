@@ -1,6 +1,7 @@
 /**
  * wx-herald 小猴偷米微信公众号中间件
  */
+"use strict";
 const chalk = require('chalk')
 const wechat = require('co-wechat')
 const config = require('../../sdk/sdk.json').wechat['wx-herald']
@@ -93,7 +94,7 @@ const handler = {
     let currentCount = current.length
 
     return [
-      `🗓 本学期已上 ${endedCount} 课，还有 ${upcomingCount} 课`, 
+      `🗓 本学期已上 ${endedCount} 课，还有 ${upcomingCount} 课`,
       current.map(k => `正在上课：${k.courseName} @ ${k.location}\n`).join(''),
       upcoming.slice(0, 5).map(k => `${moment(k.startTime).fromNow()}
         ${k.courseName} @ ${k.location}`).join('\n\n'),
@@ -309,7 +310,7 @@ const handler = {
   async 'App|APP|下载'() {
 
     return `🐵 小猴偷米 App 下载地址
-    
+
     请复制到浏览器打开：
     https://myseu.cn/#/download
 
@@ -336,7 +337,7 @@ const handler = {
 
     💡 所有命令与参数之间均有空格
     🙈 密码及缓存经过交叉加密保护`.padd(),
-    
+
   timeout: '请求超时，学校服务又挂啦 🙁',
 
   defaultError: e => {

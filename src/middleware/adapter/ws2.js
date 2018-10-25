@@ -1,3 +1,4 @@
+"use strict";
 const crypto = require('crypto')
 const { config } = require('../../app')
 const axios = require('axios')

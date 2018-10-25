@@ -85,7 +85,7 @@ app.use(middleware.statistics);
 // 2. 参数格式化，对上游传入的 URL 参数和请求体参数进行合并
 app.use(middleware.params);
 // 3. 返回格式化，将下游返回内容包装一层JSON
-app.use(middleware._return);
+app.use(middleware.Return);
 
 /*
   ## D. 兼容性临时层

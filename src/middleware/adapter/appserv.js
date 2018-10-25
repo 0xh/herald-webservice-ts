@@ -1,3 +1,4 @@
+"use strict";
 const pubdb = require('../../database/publicity')
 const authdb = require('../../database/auth')
 const { config } = require('../../app')
